@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
-import weatherData from "../Components/weatherData";
-import weatherIcons from "../Components/weatherIcons";
+import weatherData from "./components/weatherData";
+import weatherIcons from "./components/weatherIcons";
 
 export default function App() {
   return (

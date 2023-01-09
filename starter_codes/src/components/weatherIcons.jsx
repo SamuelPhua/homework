@@ -1,6 +1,6 @@
 import React from "react";
 
-const weatherIcons = () => {
+const weatherIcons = (props) => {
   return (
     <div className="weather">
       <img src={props.img} alt="" />
