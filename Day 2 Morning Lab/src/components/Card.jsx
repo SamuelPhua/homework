@@ -4,13 +4,14 @@ const Card = (props) => {
   const [backgroundImage, setcardImage] = useState(props.backgroundImage);
 
   const handleClick = () => {
-    setcardImage(props.cardImage)
-  }
-  
-  return 
-  <div>
-    <button onClick={handleClick}></button>
-  </div>;
+    setcardImage(props.cardImage);
+  };
+
+  return (
+    <div className="board">
+      <img src={props.backgroundImage} onClick={handleClick}></img>
+    </div>
+  );
 };
 
 export default Card;

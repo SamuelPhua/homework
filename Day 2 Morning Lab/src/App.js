@@ -1,12 +1,11 @@
-import React from 'react';
-import './styles.css';
-import cardData from './cardData';
-import Card from './components/Card';
+import React from "react";
+import "./styles.css";
+import cardData from "./cardData";
+import Card from "./components/Card";
 
 export default function App() {
   return (
     <div className="App">
-
       <header>
         <h1>Memory Game</h1>
         <nav>
@@ -16,16 +15,26 @@ export default function App() {
       </header>
 
       <main>
-          <h2 id="instructions">Instructions</h2>
-          <p>Concentration, also known as Match Match, Memory, Pelmanism, Shinkei-suijaku, Pexeso or simply Pairs, is a card game in which all of the cards are laid face down on a surface and two cards are flipped face up over each turn. The object of the game is to turn over pairs of matching cards.</p>
+        <h2 id="instructions">Instructions</h2>
+        <p>
+          Concentration, also known as Match Match, Memory, Pelmanism,
+          Shinkei-suijaku, Pexeso or simply Pairs, is a card game in which all
+          of the cards are laid face down on a surface and two cards are flipped
+          face up over each turn. The object of the game is to turn over pairs
+          of matching cards.
+        </p>
 
-          <div id="message"></div>
-          <div id="game-board" class="board">
-            {cardData.map((value, index) => {
-              <Card backgroundImage={value.cardImage} setbackgroundImage={value.backgroundImage} key={index} />
-            })}
-              {/* CARDS WILL BE RENDERED HERE */}
-          </div>
+        <div id="message"></div>
+        <div id="game-board" class="board">
+          {cardData.map((value, index) => (
+            <Card
+              backgroundImage={value.backgroundImage}
+              cardImage={value.cardImage}
+              key={index}
+            />
+          ))}
+          {/* CARDS WILL BE RENDERED HERE */}
+        </div>
       </main>
 
       <footer className="clearfix">
@@ -34,9 +43,6 @@ export default function App() {
           Created with &hearts; by <span className="name">GA</span>
         </p>
       </footer>
-
     </div>
   );
 }
-
-
