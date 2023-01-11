@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 function MyShoppingCart(props) {
   //console.log("this is props  from MyShoppingCart", props)
@@ -13,9 +13,7 @@ function MyShoppingCart(props) {
   return (
     <div className="MyShoppingCart">
       <h2>Your Cart!</h2>
-      <ul>
-        {things}
-       </ul>
+      <ul>{things}</ul>
     </div>
   );
 }
