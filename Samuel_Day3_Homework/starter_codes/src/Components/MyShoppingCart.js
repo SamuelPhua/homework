@@ -9,7 +9,7 @@ function MyShoppingCart(props) {
       </li>
     );
   });
-
+  
   return (
     <div className="MyShoppingCart">
       <h2>Your Cart!</h2>

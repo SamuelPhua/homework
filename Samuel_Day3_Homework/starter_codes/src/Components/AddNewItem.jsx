@@ -24,15 +24,33 @@ const AddNewItem = (props) => {
       price,
       describe,
     };
-    props.save(newInputs)
+    props.save(newInputs);
+    props.amount({name: name, price: parseFloat(price)})
   };
 
   return (
     <>
-        <input value={name} type="text" onChange={handleNameChange} placeholder="product name" />
-        <input value={price} type="text" onChange={handlePriceChange}  placeholder="price" />
-        <input value={describe} type="text" onChange={handleDescribeChange} placeholder="description" />
-        <button onClick={handleSubmit} type="submit">Submit</button>
+      <input
+        value={name}
+        type="text"
+        onChange={handleNameChange}
+        placeholder="product name"
+      />
+      <input
+        value={price}
+        type="text"
+        onChange={handlePriceChange}
+        placeholder="price"
+      />
+      <input
+        value={describe}
+        type="text"
+        onChange={handleDescribeChange}
+        placeholder="description"
+      />
+      <button onClick={handleSubmit} type="submit">
+        Submit
+      </button>
     </>
   );
 };

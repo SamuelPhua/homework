@@ -1,104 +1,104 @@
 const products = [
   {
-    name: 'allen wrench',
+    name: "allen wrench",
     price: 2.99,
-    description: 'handy tool'
+    description: "handy tool",
   },
   {
-    name: 'cornucopia',
+    name: "cornucopia",
     price: 5.99,
-    description: 'festive holiday decoration'
+    description: "festive holiday decoration",
   },
   {
-    name: 'banana',
+    name: "banana",
     price: 0.99,
-    description: 'full of potassium'
+    description: "full of potassium",
   },
   {
-    name: 'guillotine (cigar)',
+    name: "guillotine (cigar)",
     price: 10.59,
-    description: 'behead your stub'
+    description: "behead your stub",
   },
   {
-    name: 'jack-o-lantern',
+    name: "jack-o-lantern",
     price: 3.99,
-    description: 'spooky seasonal fun'
+    description: "spooky seasonal fun",
   },
   {
-    name: 'doggie treat (box)',
+    name: "doggie treat (box)",
     price: 5.99,
-    description: "fido loves 'em"
+    description: "fido loves 'em",
   },
   {
-    name: 'egg separator',
+    name: "egg separator",
     price: 3.99,
-    description: 'it separates yolks from whites'
+    description: "it separates yolks from whites",
   },
   {
-    name: 'LED lightbulb',
+    name: "LED lightbulb",
     price: 6.55,
-    description: "It's super-efficient!"
+    description: "It's super-efficient!",
   },
   {
-    name: 'owl pellets',
+    name: "owl pellets",
     price: 3.99,
-    description: "Don't ask what they used to be."
+    description: "Don't ask what they used to be.",
   },
   {
-    name: 'flag',
+    name: "flag",
     price: 5.99,
-    description: 'catches the breeze'
+    description: "catches the breeze",
   },
   {
-    name: 'hair brush',
+    name: "hair brush",
     price: 6.99,
-    description: 'fine boar bristles'
+    description: "fine boar bristles",
   },
   {
-    name: 'iridium (one gram)',
+    name: "iridium (one gram)",
     price: 19.36,
-    description: 'corrosion-resistant metal'
+    description: "corrosion-resistant metal",
   },
   {
-    name: 'quark',
+    name: "quark",
     price: 0.01,
-    description: 'Very small'
+    description: "Very small",
   },
   {
-    name: 'turtleneck',
+    name: "turtleneck",
     price: 19.99,
-    description: 'available in black and slightly-darker black'
+    description: "available in black and slightly-darker black",
   },
   {
-    name: 'kaleidoscope',
+    name: "kaleidoscope",
     price: 8.25,
-    description: 'tube with moving plastic pieces inside'
+    description: "tube with moving plastic pieces inside",
   },
   {
-    name: 'mitt (leather)',
+    name: "mitt (leather)",
     price: 15,
-    description: 'regulation sized'
+    description: "regulation sized",
   },
   {
-    name: 'nothing',
+    name: "nothing",
     price: 10,
-    description: "Hey, if you pay us, we won't ask any questions."
+    description: "Hey, if you pay us, we won't ask any questions.",
   },
   {
-    name: 'violin',
+    name: "violin",
     price: 2000,
-    description: 'Talk about a JS fiddle...'
+    description: "Talk about a JS fiddle...",
   },
   {
-    name: 'yoyo',
+    name: "yoyo",
     price: 1,
-    description: 'We had to pull some strings to get this one in.'
+    description: "We had to pull some strings to get this one in.",
   },
   {
-    name: 'pincushion',
+    name: "pincushion",
     price: 1.99,
-    description: "You'll get 'stuck' on it"
-  }
+    description: "You'll get 'stuck' on it",
+  },
 ];
 
 export default products;

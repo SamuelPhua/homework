@@ -7,6 +7,8 @@ function AllTheThings(props) {
     return (
       <li key={i} onClick={() => props.handleClick(d)}>
         {d.name} - ${d.price}
+        <br></br>
+        {d.description}
       </li>
     );
   });
