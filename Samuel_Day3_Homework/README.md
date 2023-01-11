@@ -30,7 +30,7 @@ For this exercise you will do the following:
 - Create a new Form Component that provides the user the following inputs:
   - product name // Can take in any value in the box, onChange{function itself}
   - price
-  - description
+  - description // Do in the future
   - submit button
 - The inputs will be `controlled` and only when the user submits will the values be captured
 - The Component will pass the data captured to it's parent (App)

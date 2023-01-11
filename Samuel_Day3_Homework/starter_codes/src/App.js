@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./styles.css";
-import AllTheThings from "./AllTheThings";
+import AllTheThings from "./Components/AllTheThings";
 import MyShoppingCart from "./Components/MyShoppingCart";
 import productsArr from "./products";
-import ProductName from "./Components/ProductName";
+import AddNewItem from "./Components/AddNewItem";
 
 export default function App() {
   const [products, setProducts] = useState(productsArr);
@@ -18,11 +18,15 @@ export default function App() {
     setCart(cartArr);
   };
 
+  const addProducts = (enteredData) => {
+    setProducts([enteredData, ...products]);
+  };
+
   return (
     <div className="App">
       <h1>Big Time Shopping</h1>
       <div className="AllTheThings">
-        <ProductName onSave={addToCart} />
+        <AddNewItem save={addProducts} />
         <AllTheThings products={products} handleClick={addToCart} />
       </div>
       <MyShoppingCart cart={cart} handleClick={removeFromCart} />
