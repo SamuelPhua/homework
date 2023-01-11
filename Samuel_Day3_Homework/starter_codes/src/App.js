@@ -29,7 +29,7 @@ export default function App() {
     <div className="App">
       <h1>Big Time Shopping</h1>
       <div className="AllTheThings">
-        <AddNewItem save={addProducts} addToCart={addToCart} />
+        <AddNewItem save={addProducts} />
         <AllTheThings products={products} handleClick={addToCart} />
       </div>
       <MyShoppingCart cart={cart} handleClick={removeFromCart} totalAmount={totalAmount} />
