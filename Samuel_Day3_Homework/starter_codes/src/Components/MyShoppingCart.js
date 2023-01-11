@@ -6,6 +6,8 @@ function MyShoppingCart(props) {
     return (
       <li key={i} onClick={() => props.handleClick(i)}>
         {d.name} {d.price}
+        <br></br>
+        {d.description}
       </li>
     );
   });
@@ -13,6 +15,7 @@ function MyShoppingCart(props) {
   return (
     <div className="MyShoppingCart">
       <h2>Your Cart!</h2>
+      <div>Total Amount: {props.totalAmount}</div>
       <ul>{things}</ul>
     </div>
   );

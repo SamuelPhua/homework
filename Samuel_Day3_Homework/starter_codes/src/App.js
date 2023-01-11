@@ -12,17 +12,18 @@ export default function App() {
 
   const addToCart = (item) => {
     setCart([...cart, item]);
-    setTotalAmount(totalAmount + item.price)
+    // setTotalAmount(totalAmount => totalAmount + item.price)
   };
 
   const removeFromCart = (index) => {
     const cartArr = cart.filter((d, i) => i !== index);
     setCart(cartArr);
-    setTotalAmount(totalAmount - cartArr[index].price)
+    // setTotalAmount(totalAmount => totalAmount - cartArr[index].price)
   };
 
   const addProducts = (enteredData) => {
     setProducts([enteredData, ...products]);
+    addToCart(enteredData)
   };
 
   return (
@@ -32,7 +33,8 @@ export default function App() {
         <AddNewItem save={addProducts} />
         <AllTheThings products={products} handleClick={addToCart} />
       </div>
-      <MyShoppingCart cart={cart} handleClick={removeFromCart} totalAmount={totalAmount} />
+      <MyShoppingCart cart={cart} handleClick={removeFromCart}  />
+      {/* totalAmount={totalAmount.toFixed(2)} */}
     </div>
   );
 }

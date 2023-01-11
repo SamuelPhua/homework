@@ -21,11 +21,10 @@ const AddNewItem = (props) => {
     event.preventDefault();
     const newInputs = {
       name,
-      price,
+      price: parseInt(price),
       describe,
     };
     props.save(newInputs);
-    props.amount({name: name, price: parseFloat(price)})
   };
 
   return (
