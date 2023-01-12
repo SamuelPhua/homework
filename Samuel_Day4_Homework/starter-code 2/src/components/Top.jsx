@@ -6,17 +6,6 @@ const Top = (props) => {
   const [price, setPrice] = useState("");
   const [date, setDate] = useState(currDate);
 
-  const handleItem = (event) => {
-    setItem(event.target.value);
-  };
-
-  const handlePrice = (event) => {
-    setPrice(event.target.value);
-  };
-
-  const handleDate = (date) => {
-    setDate(date);
-  };
   const handleSubmit = (event) => {
     event.preventDefault();
     const newInputs = {
@@ -29,28 +18,30 @@ const Top = (props) => {
 
   return (
     <>
-      <h1 className="top">
-        <input
+      <h1>
+        <div className="title">Update your list</div>
+        <br></br>
+        <input className="list1"
+          type="text"
           value={item}
-          type="text"
-          onChange={handleItem}
-          placeholder="name of item"
+          onChange={(e) => setItem(e.target.value)}
+          placeholder="item"
         />
-        <input
+        <br></br>
+        <input className="list2"
+          label="Price"
+          type="text"
           value={price}
-          type="text"
-          onChange={handlePrice}
-          placeholder="how much"
+          onChange={(e) => setPrice(e.target.value)}
+          placeholder="price"
         />
-        <input
+        <br></br>
+        <input className="list3"
+          label="Price"
+          type="text"
           value={date}
-          type="text"
-          onChange={handleDate}
-          placeholder="today's date"
         />
-        {/* <button onClick={handleSubmit} type="submit">
-          Submit
-        </button> */}
+        <button type="submit" onClick={handleSubmit}>Submit</button>
       </h1>
     </>
   );

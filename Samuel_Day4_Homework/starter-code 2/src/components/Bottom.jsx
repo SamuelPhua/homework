@@ -1,25 +1,26 @@
 import React from "react";
 
 const Bottom = (props) => {
-  let inputs = props.input.map((i, j) => {
-
-    const handleDelete = (event) => {
-        
-    }
-    return (
-      <li key={j} onClick={() => props.handleClick(j)}>
-        {i.item} {i.price} {i.date}
-      </li>
-    );
-  });
-
   return (
-  <div>
-    <h2 className="bottom">
-        {inputs}
+    <h2>
+        <span className="title">
+            Your list
+        </span>
+      <br></br>
+      <div>
+        {props.items.map((item, index) => (
+          <div key={index}>
+            <p>
+              <span className="updatelist">
+                [item: {item.item}] [price:$ {item.price}] [date: {item.date}]{" "}
+              </span>
+              <button onClick={() => props.remove(index)}>Delete</button>
+            </p>
+          </div>
+        ))}
+      </div>
     </h2>
-  </div>
-  )
+  );
 };
 
 export default Bottom;
