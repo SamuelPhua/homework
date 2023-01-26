@@ -1,5 +1,4 @@
 import React from "react";
-import WatchLaterList from "./WatchList";
 
 const Movie = ({ movie, selectMovie, addToWatchLater }) => {
   const IMAGE_PATH = "https://image.tmdb.org/t/p/w342";

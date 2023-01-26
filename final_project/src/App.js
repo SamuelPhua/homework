@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Movie from "./components/Movie";
-// import VideoPlayer from "./components/VideoPlayer";
 import YouTube from "react-youtube";
 import "./App.css";
 import Header from "./components/Header";
@@ -64,7 +63,6 @@ const App = () => {
     window.scrollTo(0, 0);
   };
 
-
   const renderMovies = () =>
     movies.map((movie) => (
       <Movie selectMovie={selectMovie} key={movie.id} movie={movie} />
@@ -76,10 +74,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Header
-        fetchMovies={fetchMovies}
-        setSearch={setSearch}
-      />
+      <Header fetchMovies={fetchMovies} setSearch={setSearch} />
       {movies.length ? (
         <main>
           {singleMovie ? (
