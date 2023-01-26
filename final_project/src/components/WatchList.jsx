@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function WatchLaterList() {
+function WatchList() {
   const [watchLaterItems, setWatchLaterItems] = useState([]);
 
   function addToWatchLater(movie) {
@@ -8,12 +8,12 @@ function WatchLaterList() {
   }
 
   function removeFromWatchLater(movie) {
-    setWatchLaterItems(watchLaterItems.filter(i => i !== movie));
+    setWatchLaterItems(watchLaterItems.filter((i) => i !== movie));
   }
 
   return (
     <div>
-      <button onClick={() => addToWatchLater({ title: 'Example Item' })}>
+      <button onClick={() => addToWatchLater({ title: "Example Item" })}>
         Add to Watch Later
       </button>
       <ul>
@@ -21,7 +21,7 @@ function WatchLaterList() {
           <li key={index}>{item.title}</li>
         ))}
       </ul>
-      <button onClick={() => removeFromWatchLater({ title: 'Example Item' })}>
+      <button onClick={() => removeFromWatchLater({ title: "Example Item" })}>
         Remove from Watch Later
       </button>
       <ul>
@@ -33,4 +33,4 @@ function WatchLaterList() {
   );
 }
 
-export default WatchLaterList;
+export default WatchList;

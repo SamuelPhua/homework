@@ -7,13 +7,13 @@ const Header = ({ fetchMovies, setSearch }) => {
     <header className="center-max-size header">
       <span className="brand">Movie App</span>
       <form className="form" onSubmit={fetchMovies}>
-        <input
-          onInput={(e) => setSearch(e.target.value)}
-        />
-      </form>
-      <button className="button" onClick={() => setShowWatchLater(!showWatchLater)}>
+      <button className="watchlater" onClick={() => setShowWatchLater(!showWatchLater)}>
         Watch Later
       </button>
+        <input
+          className="search" onInput={(e) => setSearch(e.target.value)}
+        />
+      </form>
     </header>
   );
 };

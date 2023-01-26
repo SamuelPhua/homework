@@ -4,6 +4,7 @@ import Movie from "./components/Movie";
 import YouTube from "react-youtube";
 import "./App.css";
 import Header from "./components/Header";
+import { BrowserRouter, Link } from "react-router-dom";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
@@ -65,7 +66,9 @@ const App = () => {
 
   const renderMovies = () =>
     movies.map((movie) => (
-      <Movie selectMovie={selectMovie} key={movie.id} movie={movie} />
+      <Link to={`/movie/${movie.id}`}>
+        <Movie selectMovie={selectMovie} key={movie.id} movie={movie} />
+      </Link>
     ));
 
   useEffect(() => {
@@ -73,71 +76,77 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <Header fetchMovies={fetchMovies} setSearch={setSearch} />
-      {movies.length ? (
-        <main>
-          {singleMovie ? (
-            <div
-              className="poster"
-              style={{
-                backgroundImage: `url(${images}${singleMovie.backdrop_path})`,
-              }}
-            >
-              {playing ? (
-                <>
-                  <YouTube
-                    videoId={trailer.key}
-                    opts={{
-                      width: "1280",
-                      height: "600",
-                      playerVars: {
-                        autoplay: 1,
-                        controls: 0,
-                        cc_load_policy: 0,
-                        fs: 0,
-                        iv_load_policy: 0,
-                        modestbranding: 0,
-                        rel: 0,
-                        showinfo: 0,
-                      },
-                    }}
-                  />
-                  <button
-                    onClick={() => setPlaying(false)}
-                    className={"button close-video"}
-                  >
-                    Close
-                  </button>
-                </>
-              ) : (
-                <div className="center-max-size">
-                  <div className="poster-content">
-                    {trailer ? (
-                      <button
-                        className={"button play-video"}
-                        onClick={() => setPlaying(true)}
-                        type="button"
-                      >
-                        Play Trailer
-                      </button>
-                    ) : (
-                      "Sorry, no trailer available"
-                    )}
-                    <h1>{singleMovie.title}</h1>
-                    <p>{singleMovie.overview}</p>
+    <BrowserRouter>
+      <div className="App">
+        <Header
+          className="search"
+          fetchMovies={fetchMovies}
+          setSearch={setSearch}
+        />
+        {movies.length ? (
+          <main>
+            {singleMovie ? (
+              <div
+                className="poster"
+                style={{
+                  backgroundImage: `url(${images}${singleMovie.backdrop_path})`,
+                }}
+              >
+                {playing ? (
+                  <>
+                    <YouTube
+                      videoId={trailer.key}
+                      opts={{
+                        width: "1280",
+                        height: "600",
+                        playerVars: {
+                          autoplay: 1,
+                          controls: 0,
+                          cc_load_policy: 0,
+                          fs: 0,
+                          iv_load_policy: 0,
+                          modestbranding: 0,
+                          rel: 0,
+                          showinfo: 0,
+                        },
+                      }}
+                    />
+                    <button
+                      onClick={() => setPlaying(false)}
+                      className={"button close-video"}
+                    >
+                      Close
+                    </button>
+                  </>
+                ) : (
+                  <div className="center-max-size">
+                    <div className="poster-content">
+                      {trailer ? (
+                        <button
+                          className={"button play-video"}
+                          onClick={() => setPlaying(true)}
+                          type="button"
+                        >
+                          Play Trailer
+                        </button>
+                      ) : (
+                        "Sorry, no trailer available"
+                      )}
+                      <h1>{singleMovie.title}</h1>
+                      <p>{singleMovie.overview}</p>
+                    </div>
                   </div>
-                </div>
-              )}
-            </div>
-          ) : null}
+                )}
+              </div>
+            ) : null}
 
-          <div className={"center-max-size container"}>{renderMovies()}</div>
-        </main>
-      ) : (
-        "Sorry, no movies found"
-      )}
-    </div>
+            <div className={"center-max-size container"}>{renderMovies()}</div>
+          </main>
+        ) : (
+          "Sorry, no movies found"
+        )}
+      </div>
+    </BrowserRouter>
   );
 };
 
